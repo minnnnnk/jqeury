@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="./assets/js/jquery/jquery-1.12.4.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+	<div>
+		<button type="button">js테스트 버튼</button>
+		<h3 id="display">이름출력영역</h3>
+	</div>
+
+</body>
+
+<script type="text/javascript">
+ $("[type='button']").on("mouseleave" ,function(){
+	//$("#display").html("<font color='red'>김민규</font>");
+	
+	$("#display").text("김");
+	$("#display").css("color","blue");
+	
+	
+ });
+ 
+//h3클릭했을때
+$("#display").on("click",function(){
+	console.log("h3클릭");
+	
+})
+ 
+ //타입 []
+ //. 클래스
+ //# 아이디
+</script>
+
+
+</html>
