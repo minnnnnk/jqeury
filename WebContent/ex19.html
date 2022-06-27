@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>어렵</title>
+<script type="text/javascript" src="./assets/js/jquery/jquery-1.12.4.js"></script>
+</head>
+<body>
+	<input type="text" id="display" name="" value="">
+	<br>
+	<button id="nine" type="button">9</button>
+	<button id="eight"  type="button">8</button>
+	<button id="seven" type="button">7</button>
+	<button id="divide" type="button">/</button>
+	<br>
+	<button id="six" type="button">6</button>
+	<button id="five" type="button">5</button>
+	<button id="four" type="button">4</button>
+	<button id="multi" type="button">x</button>
+	<br>
+	<button id="three" type="button">3</button>
+	<button id="two" type="button">2</button>
+	<button id="one" type="button">1</button>
+	<button id="minus" type="button">-</button>
+	<br>
+	<button id="zero" type="button">0</button>
+	<button id="reset" name="reset" type="button">C</button>
+	<button id="sum" type="button">=</button>
+	<button id="plus" type="button">+</button>
+	<br>
+</body>
+
+<script type="text/javascript">
+	
+	
+	
+	
+	$("button").on("click",function(){
+		
+		var $this = $(this);
+		var str = $this.text();
+		
+		var dis = $("#display").append(str);
+		var num = dis.text();
+		
+		if(("[name='reset']")){
+			$("#display").val("");
+		}
+		$("#display").val(num);
+		
+		
+	})
+	/* $("#reset").on("click",function(){
+		$("input").empty();
+	}) */
+	
+	$("#sum").on("click",function(){
+		if($("#display").val().split("+").length === 2){
+			var num = $("#display").val().split("+");
+			$("#display").val(parseInt(num[0])+parseInt(num[1]));
+			
+		}else if($("#display").val().split("-").length === 2){
+			var num = $("#display").val().split("-");
+			$("#display").val(parseInt(num[0])-parseInt(num[1]));
+			
+		}else if($("#display").val().split("x").length === 2){
+			var num = $("#display").val().split("x");
+			$("#display").val(parseInt(num[0])*parseInt(num[1]));
+			
+		}else if($("#display").val().split("/").length === 2){
+			var num = $("#display").val().split("/");
+			$("#display").val(parseInt(num[0])/parseInt(num[1]));
+			
+		}
+		
+	})
+	
+	
+	//display.innerHTML = display.value;
+</script>
+</html>
